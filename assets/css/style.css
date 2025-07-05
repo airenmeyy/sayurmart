@@ -1,0 +1,25 @@
+/* Menggunakan font Poppins sebagai default */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+.hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animasi sederhana untuk notifikasi */
+@keyframes fade-in-out {
+    0%, 100% { opacity: 0; transform: translateY(20px); }
+    10%, 90% { opacity: 1; transform: translateY(0); }
+}
+
+.toast-notification {
+    animation: fade-in-out 3s ease-in-out forwards;
+}
+
+.category-item:hover .category-icon {
+    transform: scale(1.1);
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SayurMart - Jual Sayur Segar Organik</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link ke CSS Kustom Anda -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <!-- Top Bar -->
+        <div class="bg-gray-100 py-2 text-sm text-gray-600">
+            <div class="container mx-auto px-6 flex justify-end items-center">
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hover:text-green-600">Language <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Header -->
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-green-600">SayurMart</a>
+            
+            <div class="hidden lg:flex items-center gap-8 text-gray-700 font-medium">
+                <a href="#home" class="hover:text-green-600">Home</a>
+                <a href="#products-section" class="hover:text-green-600">Produk</a>
+                <a href="#" class="hover:text-green-600">Blog</a>
+                <a href="#" class="hover:text-green-600">Tentang Kami</a>
+                <a href="#" class="hover:text-green-600">Kontak</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="cart-button" class="relative">
+                    <i class="fas fa-shopping-cart text-2xl text-gray-700"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-semibold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+                 <button class="lg:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== Halaman Utama (Katalog Produk) ===== -->
+    <main id="main-page">
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white">
+            <div class="bg-black bg-opacity-40 py-24 md:py-32">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-xl md:text-2xl font-semibold tracking-widest">MAKANAN ORGANIK</h2>
+                    <h1 class="text-4xl md:text-6xl font-bold mt-2 mb-6">Cari Makanan Organik<br>Segar Pilihan Anda</h1>
+                    <button id="shop-now-btn" class="bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-700 transition-colors duration-300">
+                        BELANJA SEKARANG
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast text-4xl text-green-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Gratis Ongkir</h3>
+                    <p class="text-gray-500 text-sm">Gratis ongkir untuk pesanan di atas Rp100k</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset text-4xl text-green-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Dukungan 24/7</h3>
+                    <p class="text-gray-500 text-sm">Kami siap membantu Anda kapan saja</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo text-4xl text-green-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Garansi Uang Kembali</h3>
+                    <p class="text-gray-500 text-sm">Jaminan 30 hari uang kembali</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt text-4xl text-green-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Pembayaran Aman</h3>
+                    <p class="text-gray-500 text-sm">Semua pembayaran diproses dengan aman</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="bg-gray-50 py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Kategori Teratas</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+                    <!-- Kategori Buah -->
+                    <div class="category-item text-center group cursor-pointer">
+                        <div class="bg-white rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-md transition-transform duration-300 category-icon overflow-hidden">
+                            <img src="assets/images/buah-buahan.jpeg" alt="[Gambar Kategori Buah-buahan]" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 font-semibold text-gray-700">Buah-buahan</h3>
+                    </div>
+                    <!-- Kategori Sayur -->
+                    <div class="category-item text-center group cursor-pointer">
+                        <div class="bg-white rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-md transition-transform duration-300 category-icon overflow-hidden">
+                            <img src="assets/images/sayuran.jpeg" alt="[Gambar Kategori Sayuran]" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 font-semibold text-gray-700">Sayuran</h3>
+                    </div>
+                    <!-- Kategori Minuman -->
+                    <div class="category-item text-center group cursor-pointer">
+                        <div class="bg-white rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-md transition-transform duration-300 category-icon overflow-hidden">
+                            <img src="assets/images/minuman.jpeg" alt="[Gambar Kategori Minuman]" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 font-semibold text-gray-700">Minuman</h3>
+                    </div>
+                    <!-- Kategori Telur -->
+                     <div class="category-item text-center group cursor-pointer">
+                        <div class="bg-white rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-md transition-transform duration-300 category-icon overflow-hidden">
+                            <img src="assets/images/telur.jpeg" alt="[Gambar Kategori Telur]" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 font-semibold text-gray-700">Telur</h3>
+                    </div>
+                    <!-- Kategori Daging -->
+                     <div class="category-item text-center group cursor-pointer">
+                        <div class="bg-white rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-md transition-transform duration-300 category-icon overflow-hidden">
+                           <img src="assets/images/daging.jpeg" alt="[Gambar Kategori Daging]" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 font-semibold text-gray-700">Daging</h3>
+                    </div>
+                    <!-- Kategori Lainnya -->
+                     <div class="category-item text-center group cursor-pointer">
+                        <div class="bg-white rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-md transition-transform duration-300 category-icon overflow-hidden">
+                            <img src="https://placehold.co/150x150/BFDBFE/1E3A8A?text=Lainnya" alt="[Gambar Kategori Lainnya]" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 font-semibold text-gray-700">Lainnya</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katalog Produk -->
+        <section id="products-section" class="container mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Produk Pilihan</h2>
+            <p class="text-center text-gray-500 mb-8">Lihat produk-produk segar terbaik dari kami.</p>
+            
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Kartu produk akan di-generate oleh JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Halaman Checkout (Modal/Overlay) ===== -->
+    <div id="checkout-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl w-full max-w-4xl max-h-full overflow-y-auto relative">
+            <button id="close-checkout-btn" class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800">&times;</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Checkout Pesanan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Form Data Pelanggan -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 border-b pb-2">Detail Pengiriman</h3>
+                    <form id="checkout-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="address" class="block text-gray-700 font-medium mb-2">Alamat Lengkap</label>
+                            <textarea id="address" name="address" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="whatsapp" class="block text-gray-700 font-medium mb-2">Nomor WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 081234567890" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Ringkasan Pesanan -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 border-b pb-2">Ringkasan Pesanan</h3>
+                    <div id="order-summary" class="space-y-3 mb-4 max-h-48 overflow-y-auto">
+                        <!-- Item pesanan akan di-generate oleh JavaScript -->
+                    </div>
+                    <div class="border-t pt-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-gray-800">Total</span>
+                            <span id="total-price" class="text-xl font-bold text-green-600">Rp 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="mt-8 flex flex-col sm:flex-row justify-end gap-4">
+                <button id="back-to-shop-button" class="bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-400 transition-colors duration-300">
+                    Lanjut Belanja
+                </button>
+                <button type="submit" form="checkout-form" class="bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">SayurMart</h3>
+                    <p class="text-gray-400">Menyediakan sayuran dan buah organik segar langsung dari petani lokal ke rumah Anda. Kualitas dan kesegaran terjamin.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kontak</a></li>
+                        <li><a href="#products-section" class="text-gray-400 hover:text-white">Produk</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3"></i>Jl. Kebun Raya No. 1, Jakarta</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3"></i>info@sayurmart.com</li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-3"></i>+62 812 3456 7890</li>
+                    </ul>
+                </div>
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 SayurMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Notifikasi "Ditambahkan ke Keranjang" -->
+    <div id="toast" class="hidden fixed bottom-5 right-5 bg-gray-800 text-white py-3 px-5 rounded-lg shadow-xl">
+        Item ditambahkan ke keranjang!
+    </div>
+
+    <!-- Link ke JavaScript di akhir body -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
